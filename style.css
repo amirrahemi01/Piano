@@ -21,6 +21,21 @@
     display: none;
 }
 
+.fl-btn {
+    width: fit-content;
+    background: #5800ff;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    margin: 10px;
+    right: 0;
+    transition: 0.5s;
+}
+
 
 .container {
     display: flex;

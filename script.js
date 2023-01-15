@@ -6,6 +6,7 @@ const keysOpacity = document.querySelector(".keys-checkbox input");
 const container = document.querySelector(".container");
 const ftr = document.querySelector("#ftr");
 const alertph = document.querySelector(".anotherclass");
+const flScr = document.querySelector(".fl-btn");
 // const alertPhone = document.getElementById("aphone");
 // const alPhoneBg = document.getElementsByClassName("background-dark");
 
@@ -57,7 +58,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     //     alert("Please use Landscape!");
     // }
 
-    if (window.innerHeight > window.innerWidth) {
+    if (window.matchMedia("(orientation: portrait)").matches) {
         // alert("You are in portrait mode");
         container.style.display = "none";
         alertph.style.display = "flex";
@@ -68,7 +69,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         // element.appendChild(para);
     }
 
-    if (window.innerHeight < window.innerWidth) {
+    if (window.matchMedia("(orientation: landscape)").matches) {
         // alert("You are in landscape mode");
 
         // container.style.display = "none";
@@ -78,12 +79,25 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         alertph.classList.add("none");
         setTimeout( ()=> {
             ftr.style.opacity = 0;
+            flScr.style.opacity = 0;
         }, 10000);
 
     }
 
 }
 
+
+// full screnn
+const elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 // screen.orientation.lock('landscape').then(res=>console.log(res)).catch(err=>console.log(err))
 
 volumeSlider.addEventListener("input", volSlider);
