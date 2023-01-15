@@ -8,7 +8,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+.anotherclass {
+    background-color: white;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.none {
+    display: none;
+}
+
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +32,6 @@ body {
     /* background-color: #bd4f6c; */
     /* background-color: #a4508b; */
     background-image: linear-gradient(1deg, #aa92ff 0%, #815eff 74%);
-
-
 }
 
 .wrapper {
@@ -154,21 +166,55 @@ header input {
 footer {
     color: #fff;
     text-align: center;
-    font: 1rem;
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     margin-bottom: 15px;
+    margin-left: 25px;
     opacity: 0.3;
     position: fixed;
     bottom: 0;
-
+    transition: 0.5s;
 }
 
 footer code {
     font-weight: bold;
 }
 
+#container:fullscreen {
+	width: 100%;
+	height: 100%;
+	background-color: green;
+}
+
+/* prefix for Chrome & Safari */
+#container:-webkit-full-screen {
+	width: 100%;
+	height: 100%;
+	background-color: green;
+}
+
+#alert {
+    z-index: 6;
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.background-dark {
+    background-color: #000000cf;
+    min-width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+}
+
 
 @media screen and (max-width: 815px) {
+    .container {
+        background: #141414;
+    }
+
     .wrapper {
         padding: 25px;
     }
@@ -203,9 +249,19 @@ footer code {
         height: 180px;
         width: 60px;
     }
-}
 
-@media screen and (max-width: 615px) {
+    footer {
+        color: #fff;
+        text-align: center;
+        font-size: 10px;
+        margin: 15px;
+        opacity: 0.3;
+        position: fixed;
+        top: 0;
+    }
+} 
+
+/* @media screen and (max-width: 615px) {
 
     .piano-keys .key:nth-child(13),
     .piano-keys .key:nth-child(14),
@@ -218,4 +274,4 @@ footer code {
     .piano-keys .white {
         width: 50px;
     }
-}
+} */
