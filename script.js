@@ -60,6 +60,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     if (window.innerHeight > window.innerWidth) {
         // alert("You are in portrait mode");
         container.style.display = "none";
+        alertph.style.display = "flex";
         ftr.style.display = "none";
         // para.appendChild(node);
 
